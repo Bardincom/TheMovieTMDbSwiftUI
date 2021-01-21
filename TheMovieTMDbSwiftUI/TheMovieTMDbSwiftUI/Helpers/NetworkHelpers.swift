@@ -26,3 +26,7 @@ enum Language {
     static let eu = "eu"
     static let ru = "ru"
 }
+
+enum APIKey {
+    static let key = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkOGMwNzEyNDVhN2U3YzE2MjAyNzI5OTk2M2U2NDZmZCIsInN1YiI6IjYwMDgyNTRhM2Y4ZWRlMDA0MDVlMTU3YyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.pLqWDPSHNo3n3QIztUk60Hxn7ijNTOlqlxPTQVsmEGY"
+}

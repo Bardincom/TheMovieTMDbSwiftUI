@@ -11,8 +11,7 @@ struct ContentView: View {
     @ObservedObject var popularMovieModel = PopularMovieModel()
 
     var body: some View {
-//        popularMovieModel.popularMovies.forEach { print($0)}
-        Text("Hello? world")
+        Text("Hello, world")
             .padding()
     }
 }
