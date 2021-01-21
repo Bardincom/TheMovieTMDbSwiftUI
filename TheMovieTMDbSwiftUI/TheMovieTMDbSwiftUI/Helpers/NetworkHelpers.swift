@@ -10,6 +10,7 @@ import Foundation
 enum Component {
     static let scheme = "https"
     static let host = "api.themoviedb.org"
+    static let image = "https://image.tmdb.org/t/p/w500/"
 }
 
 enum Path {

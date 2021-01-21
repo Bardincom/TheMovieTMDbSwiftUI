@@ -18,7 +18,7 @@ class PopularMovieModel: ObservableObject {
             switch result {
                 case .success(let movie):
                     self.popularMovies = movie.movieInfo
-                    movie.movieInfo.forEach { print($0.title) }
+//                    movie.movieInfo.forEach { print($0.title) }
                 case .failure(let error):
                     print(error.description)
             }

@@ -11,7 +11,7 @@ import SwiftUI
 struct TheMovieTMDbSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MostPopularView()
         }
     }
 }

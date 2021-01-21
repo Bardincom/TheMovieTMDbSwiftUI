@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MovieInfo: Codable {
+struct MovieInfo: Codable, Hashable {
     var id: Int
     var backdropPath: String
     var posterPath: String
