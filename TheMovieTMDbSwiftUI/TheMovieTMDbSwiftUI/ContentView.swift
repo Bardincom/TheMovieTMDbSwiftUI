@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var popularMovieModel = PopularMovieModel()
+
     var body: some View {
-        Text("Hello, world!")
+//        popularMovieModel.popularMovies.forEach { print($0)}
+        Text("Hello? world")
             .padding()
     }
 }

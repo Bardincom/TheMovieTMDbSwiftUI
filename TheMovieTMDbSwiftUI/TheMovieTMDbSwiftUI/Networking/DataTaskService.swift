@@ -31,6 +31,14 @@ class DataTaskService: DataTaskServicing {
                 completionHandler(.failure(.otherError))
             }
 
+            guard let httpResponse = response as? HTTPURLResponse else {
+                print(error.debugDescription)
+                completionHandler(.failure(.notFound))
+                return
+            }
+
+            guard self.checkBackendErrorStatus(httpResponse: httpResponse, completionHandler: completionHandler) else { return }
+
             guard let data = data else { return }
 
             do {

@@ -21,3 +21,8 @@ enum Path {
 enum QueryItem {
     static let name = "language"
 }
+
+enum Language {
+    static let eu = "eu"
+    static let ru = "ru"
+}

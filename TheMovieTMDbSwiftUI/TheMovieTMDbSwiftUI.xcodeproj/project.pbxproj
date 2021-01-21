@@ -21,6 +21,7 @@
 		A242F4E525B8D29C0006A59B /* DataTaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A242F4E425B8D29C0006A59B /* DataTaskService.swift */; };
 		A242F4E825B8D4150006A59B /* GETService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A242F4E725B8D4140006A59B /* GETService.swift */; };
 		A242F4EB25B8D63E0006A59B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A242F4EA25B8D63E0006A59B /* NetworkService.swift */; };
+		A242F4F925B9F7EE0006A59B /* PopularMovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A242F4F825B9F7EE0006A59B /* PopularMovieModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		A242F4E425B8D29C0006A59B /* DataTaskService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTaskService.swift; sourceTree = "<group>"; };
 		A242F4E725B8D4140006A59B /* GETService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GETService.swift; sourceTree = "<group>"; };
 		A242F4EA25B8D63E0006A59B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		A242F4F825B9F7EE0006A59B /* PopularMovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovieModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			children = (
 				A242F4D225B8C1750006A59B /* Networking */,
 				A242F4CB25B8C0B60006A59B /* Model */,
+				A242F4F025B9F5F50006A59B /* ModelView */,
 				A242F4D725B8CE270006A59B /* Helpers */,
 				A242F4BA25B880240006A59B /* TheMovieTMDbSwiftUIApp.swift */,
 				A242F4BC25B880240006A59B /* ContentView.swift */,
@@ -121,6 +124,14 @@
 				A242F4D825B8CE3E0006A59B /* NetworkHelpers.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A242F4F025B9F5F50006A59B /* ModelView */ = {
+			isa = PBXGroup;
+			children = (
+				A242F4F825B9F7EE0006A59B /* PopularMovieModel.swift */,
+			);
+			path = ModelView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +212,7 @@
 				A242F4D425B8C2CD0006A59B /* BackendError.swift in Sources */,
 				A242F4D025B8C1190006A59B /* Movie.swift in Sources */,
 				A242F4E825B8D4150006A59B /* GETService.swift in Sources */,
+				A242F4F925B9F7EE0006A59B /* PopularMovieModel.swift in Sources */,
 				A242F4BB25B880240006A59B /* TheMovieTMDbSwiftUIApp.swift in Sources */,
 				A242F4EB25B8D63E0006A59B /* NetworkService.swift in Sources */,
 				A242F4DF25B8D1B00006A59B /* URLService.swift in Sources */,
