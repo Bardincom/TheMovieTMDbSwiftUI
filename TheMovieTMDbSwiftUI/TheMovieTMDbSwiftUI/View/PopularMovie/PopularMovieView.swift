@@ -1,14 +1,13 @@
 //
-//  TestView.swift
+//  PopularMovieView.swift
 //  TheMovieTMDbSwiftUI
 //
 //  Created by Aleksey Bardin on 21.01.2021.
 //
 
 import SwiftUI
-import Kingfisher
 
-struct MostPopularView: View {
+struct PopularMovieView: View {
     @ObservedObject var popularMovieModel = PopularMovieModel()
 
     let layout = [
@@ -20,25 +19,31 @@ struct MostPopularView: View {
             ScrollView {
                 LazyVGrid(columns: layout, spacing: 10) {
                     ForEach.init(popularMovieModel.popularMovies, id: \.self) { movie in
-                        VStack {
-                            KFImage(URL(string: Component.image+movie.posterPath))
-                                .resizable()
-                                .scaledToFit()
-                                .cornerRadius(10)
+                        NavigationLink( destination:
+                                            VStack {
+                                                DetailMovieView(detailMovieModel: DetailMovieModel(movieInfo: movie))
+                                            }
+//                                            .padding()
+                        ) {
+                            MovieImage(movieInfo: movie)
                         }
                     }
                 }
                 .padding(.horizontal)
             }
-            .navigationTitle("Most Popular")
+            .navigationTitle(Title.mostPopular)
         }
+        .navigationViewStyle(StackNavigationViewStyle())
+        
     }
 }
 
 struct TestView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            MostPopularView()
+            PopularMovieView()
         }
     }
 }
+
+

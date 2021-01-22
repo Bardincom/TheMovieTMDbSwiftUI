@@ -9,6 +9,7 @@ import Foundation
 
 protocol Getable {
     func getPopular(inLanguage language: String, completionHandler: @escaping ResultBlock<Movie>)
+    func getDetail(idMovie id: Int, inLanguage language: String, completionHandler: @escaping ResultBlock<MovieInfo>)
 }
 
 class GETService: Getable {
@@ -25,10 +26,20 @@ class GETService: Getable {
         self.dataProvider = dataProvider
     }
 
-    func getPopular(inLanguage language: String, completionHandler: @escaping ResultBlock<Movie>) {
+    func getPopular(inLanguage language: String,
+                    completionHandler: @escaping ResultBlock<Movie>) {
 
         guard let url = urlService.preparationURL(Path.versionAPI+Path.movie+Path.popular, language) else { return }
         let request = requestService.preparationRequest(url)
         dataProvider.dataTask(with: request, completionHandler: completionHandler)
     }
+
+    func getDetail(idMovie id: Int,
+                   inLanguage language: String,
+                   completionHandler: @escaping ResultBlock<MovieInfo>) {
+        guard let url = urlService.preparationURL(Path.versionAPI+Path.movie+"\(id)", language) else { return }
+        let request = requestService.preparationRequest(url)
+        dataProvider.dataTask(with: request, completionHandler: completionHandler)
+    }
+
 }

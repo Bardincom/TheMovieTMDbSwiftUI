@@ -13,10 +13,13 @@ struct MovieInfo: Codable, Hashable {
     var posterPath: String
     var overview: String
     var title: String
+    var genreID: [Int]?
+    var genres: [Genre]?
 
     enum CodingKeys: String, CodingKey {
-        case id, overview, title
+        case id, overview, title, genres
         case backdropPath = "backdrop_path"
         case posterPath = "poster_path"
+        case genreID = "genre_ids"
     }
 }
