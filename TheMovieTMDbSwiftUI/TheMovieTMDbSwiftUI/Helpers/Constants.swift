@@ -32,3 +32,7 @@ enum TextLabel {
 enum TimeFormat {
     static let timeFormat =  "%02ih %02im"
 }
+
+enum AssetsImage {
+    static let loginScreenBackgroundImage = "backgroundImage"
+}
