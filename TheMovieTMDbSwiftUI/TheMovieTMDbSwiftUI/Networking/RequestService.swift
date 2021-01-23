@@ -8,7 +8,7 @@
 import Foundation
 
 protocol RequestServicing {
-    func preparationRequest(_ url: URL) -> URLRequest
+    func preparationRequest(_ url: URL, _ httpMethod: String) -> URLRequest
 }
 
 final class RequestService: RequestServicing {
@@ -19,8 +19,9 @@ final class RequestService: RequestServicing {
             "Content-Type": "application/json",
         ]
 
-    func preparationRequest(_ url: URL) -> URLRequest {
+    func preparationRequest(_ url: URL, _ httpMethod: String) -> URLRequest {
         var request = URLRequest(url: url)
+        request.httpMethod = httpMethod
         request.allHTTPHeaderFields = defaultHeaders
         return request
     }

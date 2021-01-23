@@ -17,6 +17,14 @@ enum Path {
     static let versionAPI = "/3/"
     static let movie = "movie/"
     static let popular = "popular"
+    static let authenticationToken = "authentication/token/"
+    static let newToken = "new"
+    static let validate = "validate_with_login"
+}
+
+enum HttpMethod {
+    static let get = "GET"
+    static let post = "POST"
 }
 
 enum QueryItem {

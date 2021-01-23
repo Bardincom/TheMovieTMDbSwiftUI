@@ -34,6 +34,9 @@
 		A2912FF025BC737800094B67 /* LoginScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2912FEF25BC737800094B67 /* LoginScreenView.swift */; };
 		A2912FF525BC773500094B67 /* LoginScreenBackgrountImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2912FF425BC773500094B67 /* LoginScreenBackgrountImage.swift */; };
 		A2912FF925BC7CD300094B67 /* BorderViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2912FF825BC7CD300094B67 /* BorderViewModifier.swift */; };
+		A2912FFD25BCB29A00094B67 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2912FFC25BCB29A00094B67 /* Token.swift */; };
+		A291300025BCB3A500094B67 /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2912FFF25BCB3A500094B67 /* AuthorizationService.swift */; };
+		A291300325BCBB1800094B67 /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = A291300225BCBB1800094B67 /* Authorization.swift */; };
 		A2989C8F25BA241300EE5CE9 /* PopularMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2989C8E25BA241300EE5CE9 /* PopularMovieView.swift */; };
 		A2989C9325BA2B9900EE5CE9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A2989C9225BA2B9900EE5CE9 /* Kingfisher */; };
 		A2989C9D25BA368400EE5CE9 /* MovieImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2989C9C25BA368400EE5CE9 /* MovieImage.swift */; };
@@ -70,6 +73,9 @@
 		A2912FEF25BC737800094B67 /* LoginScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenView.swift; sourceTree = "<group>"; };
 		A2912FF425BC773500094B67 /* LoginScreenBackgrountImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenBackgrountImage.swift; sourceTree = "<group>"; };
 		A2912FF825BC7CD300094B67 /* BorderViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderViewModifier.swift; sourceTree = "<group>"; };
+		A2912FFC25BCB29A00094B67 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		A2912FFF25BCB3A500094B67 /* AuthorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationService.swift; sourceTree = "<group>"; };
+		A291300225BCBB1800094B67 /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
 		A2989C8E25BA241300EE5CE9 /* PopularMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovieView.swift; sourceTree = "<group>"; };
 		A2989C9C25BA368400EE5CE9 /* MovieImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieImage.swift; sourceTree = "<group>"; };
 		A2989CA025BA39E500EE5CE9 /* ImageOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOverlay.swift; sourceTree = "<group>"; };
@@ -134,6 +140,8 @@
 				A242F4CF25B8C1190006A59B /* Movie.swift */,
 				A28E8F8325BAEF2B00A48D62 /* Genre.swift */,
 				A28E8F9C25BBA72C00A48D62 /* Detail.swift */,
+				A2912FFC25BCB29A00094B67 /* Token.swift */,
+				A291300225BCBB1800094B67 /* Authorization.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -148,6 +156,7 @@
 				A242F4E425B8D29C0006A59B /* DataTaskService.swift */,
 				A242F4E725B8D4140006A59B /* GETService.swift */,
 				A242F4EA25B8D63E0006A59B /* NetworkService.swift */,
+				A2912FFF25BCB3A500094B67 /* AuthorizationService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -334,12 +343,15 @@
 				A2989C9D25BA368400EE5CE9 /* MovieImage.swift in Sources */,
 				A2989CA125BA39E500EE5CE9 /* ImageOverlay.swift in Sources */,
 				A242F4D425B8C2CD0006A59B /* BackendError.swift in Sources */,
+				A291300325BCBB1800094B67 /* Authorization.swift in Sources */,
+				A2912FFD25BCB29A00094B67 /* Token.swift in Sources */,
 				A28E8FAD25BC43B500A48D62 /* TimeConvert.swift in Sources */,
 				A242F4D025B8C1190006A59B /* Movie.swift in Sources */,
 				A28E8F8425BAEF2B00A48D62 /* Genre.swift in Sources */,
 				A2912FF525BC773500094B67 /* LoginScreenBackgrountImage.swift in Sources */,
 				A242F4E825B8D4150006A59B /* GETService.swift in Sources */,
 				A28E8FA925BC375B00A48D62 /* PosterView.swift in Sources */,
+				A291300025BCB3A500094B67 /* AuthorizationService.swift in Sources */,
 				A28E8F9925BB997800A48D62 /* Constants.swift in Sources */,
 				A28E8FA125BC2E3400A48D62 /* TitleText.swift in Sources */,
 				A28E8FA525BC2F0900A48D62 /* OverviewText.swift in Sources */,
