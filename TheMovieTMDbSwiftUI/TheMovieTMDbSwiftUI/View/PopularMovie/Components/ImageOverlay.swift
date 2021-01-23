@@ -13,8 +13,11 @@ struct ImageOverlay: View {
     var body: some View {
         ZStack {
             Text(movieInfo.title)
-                .font(.headline)
+                .font(.title2)
                 .foregroundColor(.white)
+                .scaledToFit()
+                .minimumScaleFactor(0.5)
+
         }
         .background(Color.black)
         .opacity(0.8)

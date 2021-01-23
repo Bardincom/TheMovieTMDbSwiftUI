@@ -14,11 +14,13 @@ struct MovieImage: View {
 
     var body: some View {
         VStack {
-            KFImage(URL(string: Component.image+movieInfo.posterPath))
+            if let posterImage = movieInfo.posterPath {
+            KFImage(URL(string: Component.image+posterImage))
                 .resizable()
                 .scaledToFit()
                 .overlay(ImageOverlay(movieInfo: movieInfo), alignment: .bottom)
                 .cornerRadius(10)
+            }
         }
     }
 }

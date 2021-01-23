@@ -20,3 +20,8 @@ enum Title {
 enum TextButton {
     static let back = "Home"
 }
+
+enum TextLabel {
+    static let noVote = "No Vote"
+    static let userScore = "User Score"
+}

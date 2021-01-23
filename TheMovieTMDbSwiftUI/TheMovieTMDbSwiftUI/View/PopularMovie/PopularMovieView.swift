@@ -21,7 +21,7 @@ struct PopularMovieView: View {
                     ForEach.init(popularMovieModel.popularMovies, id: \.self) { movie in
                         NavigationLink( destination:
                                             VStack {
-                                                DetailMovieView(detailMovieModel: DetailMovieModel(movieInfo: movie))
+                                                DetailMovieView(detailMovieModel: DetailMovieModel(movieID: movie.id))
                                             }
 //                                            .padding()
                         ) {

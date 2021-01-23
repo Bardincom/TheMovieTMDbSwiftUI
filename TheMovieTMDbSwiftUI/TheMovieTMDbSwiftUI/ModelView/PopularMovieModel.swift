@@ -9,6 +9,7 @@ import Foundation
 
 class PopularMovieModel: ObservableObject {
     private var networkService = NetworkService()
+    private var movieInfo: MovieInfo?
     @Published var popularMovies = [MovieInfo]()
 
     init() {

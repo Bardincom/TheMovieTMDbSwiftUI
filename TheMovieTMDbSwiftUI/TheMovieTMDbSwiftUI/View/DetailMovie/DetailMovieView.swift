@@ -15,10 +15,26 @@ struct DetailMovieView: View {
 
     var body: some View {
         VStack {
-            KFImage(URL(string: Component.image+detailMovieModel.movieInfo.backdropPath))
-                .resizable()
-                .scaledToFit()
-            Text(detailMovieModel.movieInfo.title)
+            ZStack(alignment: .bottomLeading) {
+                KFImage(URL(string: Component.image+detailMovieModel.posterImage))
+                    .resizable()
+                    .scaledToFit()
+                VStack(alignment: .leading) {
+                    Text(detailMovieModel.title)
+                        .fontWeight(.medium)
+                        .modifier(TitleText(font: Font.title))
+                    Text(detailMovieModel.voteAverage)
+                        .fontWeight(.regular)
+                        .modifier(TitleText(font: Font.title3))
+                }
+                .padding(.leading)
+            }
+            ScrollView {
+                Text(detailMovieModel.overview)
+                    .fontWeight(.medium)
+                    .modifier(OverviewText())
+            }
+
             Spacer()
         }
         .navigationBarTitle(Title.movieDetail, displayMode: .inline)
@@ -28,6 +44,7 @@ struct DetailMovieView: View {
                                         self.presentation.wrappedValue.dismiss()},
                                        label: {
                                         HStack {
+
                                             Image(systemName: ImageButton.back)
                                             Text(TextButton.back)
                                                 .font(.title3)
@@ -38,13 +55,11 @@ struct DetailMovieView: View {
                                        label: {
                                         Image(systemName: ImageButton.save)
                                        }))
-
-
     }
 }
 
 struct DetailMovieView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailMovieView(detailMovieModel: DetailMovieModel(movieInfo: MovieInfo(id: 464052, backdropPath: "String", posterPath: "", overview: "", title: "")))
+        DetailMovieView(detailMovieModel: DetailMovieModel(movieID: 464052))
     }
 }

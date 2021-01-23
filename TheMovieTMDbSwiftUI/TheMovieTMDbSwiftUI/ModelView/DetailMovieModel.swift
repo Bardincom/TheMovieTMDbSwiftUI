@@ -10,18 +10,39 @@ import Foundation
 class DetailMovieModel: ObservableObject {
 
     private var networkService = NetworkService()
-    @Published var movieInfo: MovieInfo
+    private var detailMovie: Detail?
+    @Published var movieID: Int
 
-    init(movieInfo: MovieInfo) {
-        self.movieInfo = movieInfo
-        fetchDetailSelectMovie(withId: movieInfo.id)
+    var voteAverage: String {
+        if let voteAverage = detailMovie?.voteAverage {
+
+            return TextLabel.userScore + " " + String(Int(voteAverage * 10)) + " %"
+        }
+        return TextLabel.noVote
+    }
+
+    var title: String {
+        detailMovie?.title ?? ""
+    }
+
+    var posterImage: String {
+        detailMovie?.backdropPath ?? ""
+    }
+
+    var overview: String {
+        detailMovie?.overview ?? ""
+    }
+
+    init(movieID: Int) {
+        self.movieID = movieID
+        fetchDetailSelectMovie(withId: movieID)
     }
 
     func fetchDetailSelectMovie(withId id: Int) {
         networkService.getRequest().getDetail(idMovie: id, inLanguage: Language.ru) { result in
             switch result {
-                case .success(let movieInfo):
-                    self.movieInfo = movieInfo
+                case .success(let detailMovie):
+                    self.detailMovie = detailMovie
                 case .failure(let error):
                     print(error.description)
             }
