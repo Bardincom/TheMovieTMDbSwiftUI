@@ -13,12 +13,14 @@ struct Detail: Codable, Hashable {
     var overview: String?
     var title: String
     var voteAverage: Double
-    var runtime: Int
+    var runtime: Double
+    var originalLanguage: String
     var genres: [Genre]
 
     enum CodingKeys: String, CodingKey {
         case genres, id, overview, title, runtime
         case voteAverage = "vote_average"
         case backdropPath = "backdrop_path"
+        case originalLanguage = "original_language"
     }
 }

@@ -33,6 +33,21 @@ class DetailMovieModel: ObservableObject {
         detailMovie?.overview ?? ""
     }
 
+    var runtime: String {
+        if let runtime = detailMovie?.runtime {
+           return TimeConvert.timeString(time: runtime)
+        }
+        return ""
+    }
+
+    var genre: String {
+        detailMovie?.genres.first?.name ?? ""
+    }
+
+    var originalLanguage: String{
+        detailMovie?.originalLanguage.uppercased() ?? ""
+    }
+
     init(movieID: Int) {
         self.movieID = movieID
         fetchDetailSelectMovie(withId: movieID)
@@ -49,3 +64,4 @@ class DetailMovieModel: ObservableObject {
         }
     }
 }
+

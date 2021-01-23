@@ -24,4 +24,11 @@ enum TextButton {
 enum TextLabel {
     static let noVote = "No Vote"
     static let userScore = "User Score"
+    static let duration = "Duration"
+    static let genre = "Genre"
+    static let language = "Languege"
+}
+
+enum TimeFormat {
+    static let timeFormat =  "%02ih %02im"
 }
