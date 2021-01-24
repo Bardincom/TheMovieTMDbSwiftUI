@@ -16,8 +16,6 @@ class LoginViewModel: ObservableObject {
         networkService.getRequest().getToken { result in
             switch result {
                 case .success(let token):
-                    print(token.requestToken)
-                    print(credential.username, credential.password)
                     self.authorizationService.signIn(credential: credential, token: token.requestToken) { [weak self] result in
                         switch result {
                             case .success(let validate):

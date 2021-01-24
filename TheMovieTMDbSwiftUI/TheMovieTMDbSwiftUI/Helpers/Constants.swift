@@ -10,6 +10,7 @@ import Foundation
 enum ImageButton {
     static let back = "chevron.left"
     static let save = "square.and.arrow.up"
+    static let checkmark = "checkmark"
 }
 
 enum Title {
@@ -19,6 +20,8 @@ enum Title {
 
 enum TextButton {
     static let back = "Home"
+    static let login = "Login"
+    static let cancel = "Cancel"
 }
 
 enum TextLabel {
@@ -27,6 +30,8 @@ enum TextLabel {
     static let duration = "Duration"
     static let genre = "Genre"
     static let language = "Languege"
+    static let enterLogin = "Enter your login"
+    static let enterPassword = "Enter your password"
 }
 
 enum TimeFormat {

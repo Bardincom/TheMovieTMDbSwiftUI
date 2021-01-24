@@ -10,4 +10,9 @@ import Foundation
 struct UserСredential: Codable, Hashable {
     var username: String
     var password: String
+
+    init() {
+        username = ""
+        password = ""
+    }
 }

@@ -10,7 +10,7 @@ import SwiftUI
 struct LoginScreenView: View {
 
     @ObservedObject var loginViewModel: LoginViewModel
-    @State private var credential = UserСredential(username: "", password: "")
+    @State private var credential = UserСredential()
 
     var body: some View {
         if loginViewModel.isValidate {
@@ -20,15 +20,16 @@ struct LoginScreenView: View {
                 LoginScreenBackgroundImage()
                 VStack(spacing: 20) {
                     VStack {
-                        TextField("Enter your login", text: $credential.username)
+                        TextField(TextLabel.enterLogin, text: $credential.username)
                             .bordered()
                             .padding(.horizontal)
-                        SecureField("Enter your password", text: $credential.password)
+                        SecureField(TextLabel.enterPassword, text: $credential.password)
                             .bordered()
                             .padding(.horizontal)
                     }
 
-                    ButtonsView(loginViewModel: loginViewModel, userСredential: credential)
+                    ButtonsView(loginViewModel: loginViewModel,
+                                userСredential: credential)
                 }
             }
         }

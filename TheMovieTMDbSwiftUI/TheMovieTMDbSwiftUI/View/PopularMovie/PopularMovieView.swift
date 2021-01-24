@@ -23,7 +23,6 @@ struct PopularMovieView: View {
                                             VStack {
                                                 DetailMovieView(detailMovieModel: DetailMovieModel(movieID: movie.id))
                                             }
-//                                            .padding()
                         ) {
                             MovieImage(movieInfo: movie)
                         }

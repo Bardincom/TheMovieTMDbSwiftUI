@@ -17,7 +17,7 @@ struct ButtonsView: View {
                 print("Push cancel button")
             }) {
                 HStack {
-                    Text("Cancel")
+                    Text(TextButton.cancel)
                         .font(.body)
                         .bold()
                 }
@@ -27,10 +27,10 @@ struct ButtonsView: View {
             Button(action: {
                     loginViewModel.authorizationUser(credential: userСredential)}) {
                 HStack {
-                    Image(systemName: "checkmark")
+                    Image(systemName: ImageButton.checkmark)
                         .resizable()
                         .frame(width: 16, height: 16, alignment: .center)
-                    Text("Login")
+                    Text(TextButton.login)
                         .font(.body)
                         .bold()
                 }
