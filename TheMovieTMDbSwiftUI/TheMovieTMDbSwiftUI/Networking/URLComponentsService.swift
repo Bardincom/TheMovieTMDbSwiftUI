@@ -8,17 +8,17 @@
 import Foundation
 
 protocol URLComponenting {
-    func preparationURLComponents(_ path: String,_ itemValue: String?) -> URLComponents?
+    func preparationURLComponents(_ path: String,_ language: String?) -> URLComponents?
 }
 
 final class URLComponentsService: URLComponenting {
 
-    func preparationURLComponents(_ path: String,_ itemValue: String?) -> URLComponents? {
+    func preparationURLComponents(_ path: String,_ language: String?) -> URLComponents? {
         var urlComponents = URLComponents()
         urlComponents.scheme = Component.scheme
         urlComponents.host = Component.host
         urlComponents.path = path
-        guard let value = itemValue else { return urlComponents }
+        guard let value = language else { return urlComponents }
         urlComponents.queryItems = [
             URLQueryItem(name: QueryItem.name, value: "\(value)"),
         ]

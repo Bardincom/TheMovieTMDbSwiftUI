@@ -10,12 +10,21 @@ import Foundation
 enum Component {
     static let scheme = "https"
     static let host = "api.themoviedb.org"
+    static let image = "https://image.tmdb.org/t/p/w500/"
 }
 
 enum Path {
     static let versionAPI = "/3/"
     static let movie = "movie/"
     static let popular = "popular"
+    static let authenticationToken = "authentication/token/"
+    static let newToken = "new"
+    static let validate = "validate_with_login"
+}
+
+enum HttpMethod {
+    static let get = "GET"
+    static let post = "POST"
 }
 
 enum QueryItem {

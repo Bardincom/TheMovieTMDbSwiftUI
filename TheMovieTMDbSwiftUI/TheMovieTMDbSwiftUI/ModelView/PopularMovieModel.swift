@@ -7,18 +7,22 @@
 
 import Foundation
 
-
-
 class PopularMovieModel: ObservableObject {
     private var networkService = NetworkService()
+
     @Published var popularMovies = [MovieInfo]()
 
     init() {
-        networkService.getRequest().getPopular(inLanguage: Language.eu) { (result) in
+        fetchPopularMovie()
+    }
+
+    private func fetchPopularMovie() {
+        networkService.getRequest().getPopular(inLanguage: Language.ru) { [weak self] result in
             switch result {
                 case .success(let movie):
-                    self.popularMovies = movie.movieInfo
-                    movie.movieInfo.forEach { print($0.title) }
+                    DispatchQueue.main.async {
+                        self?.popularMovies = movie.movieInfo
+                    }
                 case .failure(let error):
                     print(error.description)
             }
