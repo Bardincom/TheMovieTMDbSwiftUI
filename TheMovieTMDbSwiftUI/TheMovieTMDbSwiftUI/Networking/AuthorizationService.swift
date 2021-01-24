@@ -8,8 +8,7 @@
 import Foundation
 
 protocol Authorizating {
-    func signIn(authorization: Authorization,
-                completionHandler: @escaping ResultBlock<Bool>)
+    func signIn(credential: UserСredential, token: String, completionHandler: @escaping ResultBlock<Validate>)
 }
 
 class AuthorizationService: Authorizating {
@@ -30,14 +29,16 @@ class AuthorizationService: Authorizating {
 
     /// Авторизация зарегистрированного пользователя
     /// - Parameters:
-    ///   - authorization: модель содержит логин, пароль, токен
-    ///   - completionHandler: подтверждением авторизации будет получение логического ответа true
-    func signIn(authorization: Authorization,
-                completionHandler: @escaping ResultBlock<Bool>) {
+    ///   - credential: модель содержит логин, пароль, токен
+    ///   - completionHandler: подтверждением авторизации будет получение Validate success = true
+    func signIn(credential: UserСredential,
+                token: String,
+                completionHandler: @escaping ResultBlock<Validate>) {
 
         guard let url = urlService.preparationURL(Path.versionAPI+Path.authenticationToken+Path.validate, nil) else { return }
         var request = requestService.preparationRequest(url, HttpMethod.post)
-        request.httpBody = try? encoder.encode(authorization)
+        let cred = BodyСredential(username: credential.username, password: credential.password, requestToken: token)
+        request.httpBody = try? encoder.encode(cred)
         dataProvider.dataTask(with: request, completionHandler: completionHandler)
     }
 }

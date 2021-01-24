@@ -53,11 +53,11 @@ class DetailMovieModel: ObservableObject {
         fetchDetailSelectMovie(withId: movieID)
     }
 
-    func fetchDetailSelectMovie(withId id: Int) {
-        networkService.getRequest().getDetail(idMovie: id, inLanguage: Language.ru) { result in
+    private func fetchDetailSelectMovie(withId id: Int) {
+        networkService.getRequest().getDetail(idMovie: id, inLanguage: Language.ru) { [weak self] result in
             switch result {
                 case .success(let detailMovie):
-                    self.detailMovie = detailMovie
+                    self?.detailMovie = detailMovie
                 case .failure(let error):
                     print(error.description)
             }

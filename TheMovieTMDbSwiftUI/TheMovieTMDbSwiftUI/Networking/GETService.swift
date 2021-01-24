@@ -9,7 +9,10 @@ import Foundation
 
 protocol Getable {
     func getPopular(inLanguage language: String, completionHandler: @escaping ResultBlock<Movie>)
+
     func getDetail(idMovie id: Int, inLanguage language: String, completionHandler: @escaping ResultBlock<Detail>)
+    
+    func getToken(completionHandler: @escaping ResultBlock<Token>)
 }
 
 class GETService: Getable {

@@ -58,6 +58,7 @@ class DataTaskService: DataTaskServicing {
             let backendError: BackendError
 
             switch httpResponse.statusCode {
+                case 400: backendError = .badRequest
                 case 401: backendError = .unauthorized
                 case 404: backendError = .notFound
                 default: backendError = .otherError
