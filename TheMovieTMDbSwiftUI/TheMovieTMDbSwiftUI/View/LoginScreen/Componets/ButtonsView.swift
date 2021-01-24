@@ -10,25 +10,28 @@ import SwiftUI
 struct ButtonsView: View {
     var loginViewModel: LoginViewModel
     var userСredential: UserСredential
+
     @Binding var shouldAnimate: Bool
 
-    var body: some View {
-        HStack(spacing: 30) {
-//            ActivityIndicator(shouldAnimate: $shouldAnimate)
-            Button(action: {
-                print("Push cancel button")
-            }) {
-                HStack {
-                    Text(TextButton.cancel)
-                        .font(.body)
-                        .bold()
-                }
-            }
-            .bordered()
+    @State private var error = false
+    @State private var errorMessage = ""
 
+    var body: some View {
             Button(action: {
+
                     self.shouldAnimate = !self.shouldAnimate
-                    loginViewModel.authorizationUser(credential: userСredential)}) {
+                loginViewModel.authorizationUser(credential: userСredential) { result in
+                    switch result {
+                        case .success(_):
+                            self.shouldAnimate = !self.shouldAnimate
+                        case .failure(let error):
+                            self.error = true
+                            self.shouldAnimate = !self.shouldAnimate
+                            self.errorMessage = error.description
+                    }
+                }
+
+            }) {
                 HStack {
                     Image(systemName: ImageButton.checkmark)
                         .resizable()
@@ -38,7 +41,9 @@ struct ButtonsView: View {
                         .bold()
                 }
             }
+            .alert(isPresented: $error, content: {
+                Alert(title: Text(errorMessage))
+            })
             .bordered()
-        }
     }
 }

@@ -6,13 +6,14 @@
 //
 
 import Foundation
+import SwiftUI
 
 class LoginViewModel: ObservableObject {
     private var networkService = NetworkService()
     private var authorizationService = AuthorizationService()
     @Published var isValidate = false
 
-    func authorizationUser(credential: UserСredential) {
+    func authorizationUser(credential: UserСredential, completionHandler: @escaping ResultBlock<Validate>) {
         networkService.getRequest().getToken { result in
             switch result {
                 case .success(let token):
@@ -21,9 +22,10 @@ class LoginViewModel: ObservableObject {
                             case .success(let validate):
                                 DispatchQueue.main.async {
                                     self?.isValidate = validate.success
+                                    completionHandler(result)
                                 }
-                            case .failure(let error):
-                                print(error.description)
+                            case .failure(_):
+                                completionHandler(result)
                         }       
                     }
                 case .failure(let error):

@@ -33,7 +33,8 @@ struct LoginScreenView: View {
                     }
 
                     ButtonsView(loginViewModel: loginViewModel,
-                                userСredential: credential, shouldAnimate: $shouldAnimate)
+                                userСredential: credential,
+                                shouldAnimate: $shouldAnimate)
                 }
             }
         }
